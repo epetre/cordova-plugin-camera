@@ -228,11 +228,19 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
             if (storageOnly) {
                 switch (mediaType) {
                     case PICTURE:
-                        return new String[]{ Manifest.permission.CAMERA, Manifest.permission.READ_MEDIA_IMAGES };
+                        return new String[]{ Manifest.permission.CAMERA, 
+                                            Manifest.permission.READ_MEDIA_IMAGES,
+                                            Manifest.permission.READ_MEDIA_VIDEO,
+                                            Manifest.permission.READ_MEDIA_AUDIO };
                     case VIDEO:
-                        return new String[]{ Manifest.permission.READ_MEDIA_VIDEO };
+                        return new String[]{ Manifest.permission.CAMERA, 
+                                            Manifest.permission.READ_MEDIA_IMAGES,
+                                            Manifest.permission.READ_MEDIA_VIDEO,
+                                            Manifest.permission.READ_MEDIA_AUDIO };
                     default:
-                        return new String[]{ Manifest.permission.READ_MEDIA_IMAGES, Manifest.permission.READ_MEDIA_VIDEO };
+                        return new String[]{ Manifest.permission.READ_MEDIA_IMAGES, 
+                                             Manifest.permission.READ_MEDIA_VIDEO,
+                                             Manifest.permission.READ_MEDIA_AUDIO};
                 }
             }
             else {
