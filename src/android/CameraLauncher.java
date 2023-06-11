@@ -193,13 +193,21 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                     this.callTakePicture(destType, encodingType);
                 }
                 else if ((this.srcType == PHOTOLIBRARY) || (this.srcType == SAVEDPHOTOALBUM)) {
+                    this.getImage(this.srcType, destType);
+                       
+                    PluginResult result = new PluginResult(PluginResult.Status.OK, "Processed GALLERY");
+                    result.setKeepCallback(true);
+                    callbackContext.sendPluginResult(result);
+                      
                     // FIXME: Stop always requesting the permission
+                    /*
                     String[] permissions = getPermissions(true, mediaType);
                     if(!hasPermissions(permissions)) {
                         PermissionHelper.requestPermissions(this, SAVE_TO_ALBUM_SEC, permissions);
                     } else {
                         this.getImage(this.srcType, destType);
                     }
+                    */
                 }
             }
             catch (IllegalArgumentException e)
