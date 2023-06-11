@@ -195,9 +195,9 @@ public class CameraLauncher extends CordovaPlugin implements MediaScannerConnect
                 else if ((this.srcType == PHOTOLIBRARY) || (this.srcType == SAVEDPHOTOALBUM)) {
                     this.getImage(this.srcType, destType);
                        
-                    PluginResult result = new PluginResult(PluginResult.Status.OK, "Processed GALLERY");
-                    result.setKeepCallback(true);
-                    callbackContext.sendPluginResult(result);
+                    //PluginResult result = new PluginResult(PluginResult.Status.OK, "Processed GALLERY");
+                    //result.setKeepCallback(true);
+                    //callbackContext.sendPluginResult(result);
                       
                     // FIXME: Stop always requesting the permission
                     /*
